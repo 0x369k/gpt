@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["name", "version", "author", "description"],
+  "properties": {
+    "name": {"type": "string"},
+    "version": {"type": "string"},
+    "author": {"type": "string"},
+    "description": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "status": {"type": "string","enum": ["active","deprecated","test"]},
+    "created_at": {"type": "string", "format": "date"},
+    "updated_at": {"type": "string", "format": "date"}
+  },
+  "additionalProperties": true
+}
