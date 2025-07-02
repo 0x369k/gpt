@@ -1,0 +1,10 @@
+{
+  "name": "Example Assistant",
+  "version": "0.1.0",
+  "author": "0x369k",
+  "description": "Beispielmodul für automatische Checks.",
+  "tags": ["beispiel", "test"],
+  "status": "test",
+  "created_at": "2025-07-02",
+  "updated_at": "2025-07-02"
+}
