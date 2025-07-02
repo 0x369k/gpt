@@ -1,0 +1,35 @@
+name: Validate CustomGPT Modules
+
+on:
+  push:
+    paths:
+      - "gpts/**"
+      - "core/config.schema.json"
+      - "scripts/validate_gpt_modules.py"
+  pull_request:
+    paths:
+      - "gpts/**"
+      - "core/config.schema.json"
+      - "scripts/validate_gpt_modules.py"
+
+jobs: 
+  validate-gpt-modules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        use: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install -upgrade pip
+          pip install jsonschema pyyaml
+
+      - name: Run GPT module validation (all)
+        run: |
+          python scripts/validate_gpt_modules.py --all
